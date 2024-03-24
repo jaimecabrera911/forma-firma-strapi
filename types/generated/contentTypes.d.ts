@@ -1306,6 +1306,7 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'manyToOne',
       'api::country.country'
     >;
+    profilePicture: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

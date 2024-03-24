@@ -118,6 +118,14 @@
       "relation": "manyToOne",
       "target": "api::country.country",
       "inversedBy": "employees"
+    },
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
