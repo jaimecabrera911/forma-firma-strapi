@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "identification_types",
+  "info": {
+    "singularName": "identification-type",
+    "pluralName": "identification-types",
+    "displayName": "IdentificationType"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee",
+      "mappedBy": "identificationType"
+    },
+    "companies": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::company.company",
+      "mappedBy": "identificationType"
+    }
+  }
+}

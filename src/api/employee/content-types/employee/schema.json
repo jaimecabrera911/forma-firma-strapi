@@ -1,0 +1,108 @@
+{
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "Employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "identificationType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::identification-type.identification-type",
+      "inversedBy": "employees"
+    },
+    "identificationNumber": {
+      "type": "string"
+    },
+    "names": {
+      "type": "string"
+    },
+    "surnames": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "datetime"
+    },
+    "birthCountry": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "cellphoneNumber": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
+    },
+    "position": {
+      "type": "string"
+    },
+    "workspace": {
+      "type": "string"
+    },
+    "contactName": {
+      "type": "string"
+    },
+    "contactNumber": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "employees"
+    },
+    "healthcare_provider": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::healthcare-provider.healthcare-provider",
+      "inversedBy": "employees"
+    },
+    "pension": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pension.pension",
+      "inversedBy": "employees"
+    },
+    "occupation_risk_manager": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::occupation-risk-manager.occupation-risk-manager",
+      "inversedBy": "employees"
+    },
+    "compensation_fund": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::compensation-fund.compensation-fund",
+      "inversedBy": "employees"
+    }
+  }
+}

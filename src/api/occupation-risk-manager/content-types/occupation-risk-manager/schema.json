@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "occupation_risk_managers",
+  "info": {
+    "singularName": "occupation-risk-manager",
+    "pluralName": "occupation-risk-managers",
+    "displayName": "OccupationRiskManager"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee",
+      "mappedBy": "occupation_risk_manager"
+    }
+  }
+}
