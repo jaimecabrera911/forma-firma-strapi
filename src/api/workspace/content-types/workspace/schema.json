@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "workspaces",
+  "info": {
+    "singularName": "workspace",
+    "pluralName": "workspaces",
+    "displayName": "Workspace"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "workspaces"
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee",
+      "mappedBy": "workspace"
+    }
+  }
+}

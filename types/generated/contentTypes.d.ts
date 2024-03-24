@@ -816,6 +816,11 @@ export interface ApiCityCity extends Schema.CollectionType {
       'manyToOne',
       'api::department.department'
     >;
+    employees: Attribute.Relation<
+      'api::city.city',
+      'oneToMany',
+      'api::employee.employee'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -870,6 +875,16 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
       'api::company.company',
       'oneToMany',
       'api::employee.employee'
+    >;
+    positions: Attribute.Relation<
+      'api::company.company',
+      'oneToMany',
+      'api::position.position'
+    >;
+    workspaces: Attribute.Relation<
+      'api::company.company',
+      'oneToMany',
+      'api::workspace.workspace'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -938,6 +953,11 @@ export interface ApiCountryCountry extends Schema.CollectionType {
   attributes: {
     code: Attribute.String & Attribute.Unique;
     name: Attribute.String;
+    employees: Attribute.Relation<
+      'api::country.country',
+      'oneToMany',
+      'api::employee.employee'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1012,17 +1032,17 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     identificationNumber: Attribute.String;
     names: Attribute.String;
     surnames: Attribute.String;
-    gender: Attribute.String;
     birthdate: Attribute.DateTime;
-    birthCountry: Attribute.String;
     email: Attribute.Email;
     address: Attribute.String;
-    city: Attribute.String;
     cellphoneNumber: Attribute.String;
     phoneNumber: Attribute.String;
     password: Attribute.Password;
-    position: Attribute.String;
-    workspace: Attribute.String;
+    position: Attribute.Relation<
+      'api::employee.employee',
+      'manyToOne',
+      'api::position.position'
+    >;
     contactName: Attribute.String;
     contactNumber: Attribute.String;
     enabled: Attribute.Boolean;
@@ -1036,7 +1056,7 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'manyToOne',
       'api::company.company'
     >;
-    healthcare_provider: Attribute.Relation<
+    healthcareProvider: Attribute.Relation<
       'api::employee.employee',
       'manyToOne',
       'api::healthcare-provider.healthcare-provider'
@@ -1046,15 +1066,35 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'manyToOne',
       'api::pension.pension'
     >;
-    occupation_risk_manager: Attribute.Relation<
+    occupationRiskManager: Attribute.Relation<
       'api::employee.employee',
       'manyToOne',
       'api::occupation-risk-manager.occupation-risk-manager'
     >;
-    compensation_fund: Attribute.Relation<
+    compensationFund: Attribute.Relation<
       'api::employee.employee',
       'manyToOne',
       'api::compensation-fund.compensation-fund'
+    >;
+    workspace: Attribute.Relation<
+      'api::employee.employee',
+      'manyToOne',
+      'api::workspace.workspace'
+    >;
+    gender: Attribute.Relation<
+      'api::employee.employee',
+      'manyToOne',
+      'api::gender.gender'
+    >;
+    city: Attribute.Relation<
+      'api::employee.employee',
+      'manyToOne',
+      'api::city.city'
+    >;
+    birthCountry: Attribute.Relation<
+      'api::employee.employee',
+      'manyToOne',
+      'api::country.country'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1067,6 +1107,43 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::employee.employee',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGenderGender extends Schema.CollectionType {
+  collectionName: 'genders';
+  info: {
+    singularName: 'gender';
+    pluralName: 'genders';
+    displayName: 'Gender';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code: Attribute.String;
+    name: Attribute.String;
+    employees: Attribute.Relation<
+      'api::gender.gender',
+      'oneToMany',
+      'api::employee.employee'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gender.gender',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gender.gender',
       'oneToOne',
       'admin::user'
     > &
@@ -1223,6 +1300,47 @@ export interface ApiPensionPension extends Schema.CollectionType {
   };
 }
 
+export interface ApiPositionPosition extends Schema.CollectionType {
+  collectionName: 'positions';
+  info: {
+    singularName: 'position';
+    pluralName: 'positions';
+    displayName: 'Position';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    company: Attribute.Relation<
+      'api::position.position',
+      'manyToOne',
+      'api::company.company'
+    >;
+    employees: Attribute.Relation<
+      'api::position.position',
+      'oneToMany',
+      'api::employee.employee'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::position.position',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::position.position',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -1304,6 +1422,46 @@ export interface ApiRegimeRegime extends Schema.CollectionType {
   };
 }
 
+export interface ApiWorkspaceWorkspace extends Schema.CollectionType {
+  collectionName: 'workspaces';
+  info: {
+    singularName: 'workspace';
+    pluralName: 'workspaces';
+    displayName: 'Workspace';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    company: Attribute.Relation<
+      'api::workspace.workspace',
+      'manyToOne',
+      'api::company.company'
+    >;
+    employees: Attribute.Relation<
+      'api::workspace.workspace',
+      'oneToMany',
+      'api::employee.employee'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::workspace.workspace',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::workspace.workspace',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1328,12 +1486,15 @@ declare module '@strapi/types' {
       'api::country.country': ApiCountryCountry;
       'api::department.department': ApiDepartmentDepartment;
       'api::employee.employee': ApiEmployeeEmployee;
+      'api::gender.gender': ApiGenderGender;
       'api::healthcare-provider.healthcare-provider': ApiHealthcareProviderHealthcareProvider;
       'api::identification-type.identification-type': ApiIdentificationTypeIdentificationType;
       'api::occupation-risk-manager.occupation-risk-manager': ApiOccupationRiskManagerOccupationRiskManager;
       'api::pension.pension': ApiPensionPension;
+      'api::position.position': ApiPositionPosition;
       'api::project.project': ApiProjectProject;
       'api::regime.regime': ApiRegimeRegime;
+      'api::workspace.workspace': ApiWorkspaceWorkspace;
     }
   }
 }

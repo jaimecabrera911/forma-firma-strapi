@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "positions",
+  "info": {
+    "singularName": "position",
+    "pluralName": "positions",
+    "displayName": "Position",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "positions"
+    },
+    "employees": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::employee.employee",
+      "mappedBy": "position"
+    }
+  }
+}

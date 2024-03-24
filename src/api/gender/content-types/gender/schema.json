@@ -1,10 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "countries",
+  "collectionName": "genders",
   "info": {
-    "singularName": "country",
-    "pluralName": "countries",
-    "displayName": "Country"
+    "singularName": "gender",
+    "pluralName": "genders",
+    "displayName": "Gender",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,8 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "code": {
-      "type": "string",
-      "unique": true
+      "type": "string"
     },
     "name": {
       "type": "string"
@@ -22,7 +22,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::employee.employee",
-      "mappedBy": "birthCountry"
+      "mappedBy": "gender"
     }
   }
 }

@@ -27,22 +27,13 @@
     "surnames": {
       "type": "string"
     },
-    "gender": {
-      "type": "string"
-    },
     "birthdate": {
       "type": "datetime"
-    },
-    "birthCountry": {
-      "type": "string"
     },
     "email": {
       "type": "email"
     },
     "address": {
-      "type": "string"
-    },
-    "city": {
       "type": "string"
     },
     "cellphoneNumber": {
@@ -55,10 +46,10 @@
       "type": "password"
     },
     "position": {
-      "type": "string"
-    },
-    "workspace": {
-      "type": "string"
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::position.position",
+      "inversedBy": "employees"
     },
     "contactName": {
       "type": "string"
@@ -80,7 +71,7 @@
       "target": "api::company.company",
       "inversedBy": "employees"
     },
-    "healthcare_provider": {
+    "healthcareProvider": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::healthcare-provider.healthcare-provider",
@@ -92,16 +83,40 @@
       "target": "api::pension.pension",
       "inversedBy": "employees"
     },
-    "occupation_risk_manager": {
+    "occupationRiskManager": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::occupation-risk-manager.occupation-risk-manager",
       "inversedBy": "employees"
     },
-    "compensation_fund": {
+    "compensationFund": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::compensation-fund.compensation-fund",
+      "inversedBy": "employees"
+    },
+    "workspace": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::workspace.workspace",
+      "inversedBy": "employees"
+    },
+    "gender": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::gender.gender",
+      "inversedBy": "employees"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "employees"
+    },
+    "birthCountry": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::country.country",
       "inversedBy": "employees"
     }
   }

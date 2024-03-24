@@ -67,6 +67,18 @@
       "relation": "oneToMany",
       "target": "api::employee.employee",
       "mappedBy": "company"
+    },
+    "positions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::position.position",
+      "mappedBy": "company"
+    },
+    "workspaces": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::workspace.workspace",
+      "mappedBy": "company"
     }
   }
 }
