@@ -1,0 +1,9 @@
+# prometheus.yaml
+
+global:
+  scrape_interval: 5s
+scrape_configs:
+  - job_name: "api"
+    metrics_path: "/api/metrics"
+    static_configs:
+      - targets: ["localhost:1337"]
