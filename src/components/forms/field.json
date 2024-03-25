@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_forms_fields",
+  "info": {
+    "displayName": "Field",
+    "icon": "manyWays"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "value": {
+      "type": "json"
+    }
+  }
+}

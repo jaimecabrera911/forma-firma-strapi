@@ -1168,6 +1168,11 @@ export interface ApiCountryCountry extends Schema.CollectionType {
       'oneToMany',
       'api::employee.employee'
     >;
+    departments: Attribute.Relation<
+      'api::country.country',
+      'oneToMany',
+      'api::department.department'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1192,6 +1197,7 @@ export interface ApiDepartmentDepartment extends Schema.CollectionType {
     singularName: 'department';
     pluralName: 'departments';
     displayName: 'Department';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1203,6 +1209,11 @@ export interface ApiDepartmentDepartment extends Schema.CollectionType {
       'api::department.department',
       'oneToMany',
       'api::city.city'
+    >;
+    country: Attribute.Relation<
+      'api::department.department',
+      'manyToOne',
+      'api::country.country'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1321,6 +1332,33 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFormForm extends Schema.CollectionType {
+  collectionName: 'forms';
+  info: {
+    singularName: 'form';
+    pluralName: 'forms';
+    displayName: 'Form';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    uid: Attribute.String;
+    name: Attribute.String;
+    version: Attribute.String;
+    fields: Attribute.Component<'forms.field', true>;
+    evidences: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::form.form', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1701,6 +1739,7 @@ declare module '@strapi/types' {
       'api::country.country': ApiCountryCountry;
       'api::department.department': ApiDepartmentDepartment;
       'api::employee.employee': ApiEmployeeEmployee;
+      'api::form.form': ApiFormForm;
       'api::gender.gender': ApiGenderGender;
       'api::healthcare-provider.healthcare-provider': ApiHealthcareProviderHealthcareProvider;
       'api::identification-type.identification-type': ApiIdentificationTypeIdentificationType;
