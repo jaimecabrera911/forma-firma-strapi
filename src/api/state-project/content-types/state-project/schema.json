@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "state_projects",
+  "info": {
+    "singularName": "state-project",
+    "pluralName": "state-projects",
+    "displayName": "stateProject"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}

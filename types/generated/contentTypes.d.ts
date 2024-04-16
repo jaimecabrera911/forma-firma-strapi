@@ -1671,6 +1671,36 @@ export interface ApiRegimeRegime extends Schema.CollectionType {
   };
 }
 
+export interface ApiStateProjectStateProject extends Schema.CollectionType {
+  collectionName: 'state_projects';
+  info: {
+    singularName: 'state-project';
+    pluralName: 'state-projects';
+    displayName: 'stateProject';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::state-project.state-project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::state-project.state-project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWorkspaceWorkspace extends Schema.CollectionType {
   collectionName: 'workspaces';
   info: {
@@ -1748,6 +1778,7 @@ declare module '@strapi/types' {
       'api::position.position': ApiPositionPosition;
       'api::project.project': ApiProjectProject;
       'api::regime.regime': ApiRegimeRegime;
+      'api::state-project.state-project': ApiStateProjectStateProject;
       'api::workspace.workspace': ApiWorkspaceWorkspace;
     }
   }
