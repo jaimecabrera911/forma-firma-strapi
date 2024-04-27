@@ -1267,7 +1267,7 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     contactName: Attribute.String;
     contactNumber: Attribute.String;
     enabled: Attribute.Boolean;
-    users_permissions_user: Attribute.Relation<
+    user: Attribute.Relation<
       'api::employee.employee',
       'oneToOne',
       'plugin::users-permissions.user'
@@ -1318,6 +1318,8 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'api::country.country'
     >;
     profilePicture: Attribute.Media;
+    files: Attribute.Media;
+    signature: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1596,6 +1598,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
     singularName: 'project';
     pluralName: 'projects';
     displayName: 'Project';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1616,6 +1619,16 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::project.project',
       'manyToOne',
       'api::company.company'
+    >;
+    user: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+    state: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'api::state-project.state-project'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
