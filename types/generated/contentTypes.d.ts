@@ -1370,6 +1370,43 @@ export interface ApiFormForm extends Schema.CollectionType {
   };
 }
 
+export interface ApiFormTemplateFormTemplate extends Schema.CollectionType {
+  collectionName: 'form_templates';
+  info: {
+    singularName: 'form-template';
+    pluralName: 'form-templates';
+    displayName: 'FormTemplate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    code: Attribute.String;
+    name: Attribute.String;
+    image: Attribute.Media;
+    company: Attribute.Relation<
+      'api::form-template.form-template',
+      'oneToOne',
+      'api::company.company'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::form-template.form-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::form-template.form-template',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiGenderGender extends Schema.CollectionType {
   collectionName: 'genders';
   info: {
@@ -1788,6 +1825,7 @@ declare module '@strapi/types' {
       'api::department.department': ApiDepartmentDepartment;
       'api::employee.employee': ApiEmployeeEmployee;
       'api::form.form': ApiFormForm;
+      'api::form-template.form-template': ApiFormTemplateFormTemplate;
       'api::gender.gender': ApiGenderGender;
       'api::healthcare-provider.healthcare-provider': ApiHealthcareProviderHealthcareProvider;
       'api::identification-type.identification-type': ApiIdentificationTypeIdentificationType;
