@@ -1355,6 +1355,11 @@ export interface ApiFormForm extends Schema.CollectionType {
     version: Attribute.String;
     fields: Attribute.Component<'forms.field', true>;
     evidences: Attribute.Media;
+    project: Attribute.Relation<
+      'api::form.form',
+      'oneToOne',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

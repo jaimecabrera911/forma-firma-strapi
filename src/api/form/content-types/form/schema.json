@@ -27,14 +27,20 @@
       "component": "forms.field"
     },
     "evidences": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "project": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::project.project"
     }
   }
 }
