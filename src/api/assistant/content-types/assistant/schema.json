@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assistants",
+  "info": {
+    "singularName": "assistant",
+    "pluralName": "assistants",
+    "displayName": "Assistant"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::employee.employee"
+    },
+    "signature": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "isSigned": {
+      "type": "boolean"
+    },
+    "form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::form.form"
+    }
+  }
+}

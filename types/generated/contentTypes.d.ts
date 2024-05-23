@@ -998,6 +998,48 @@ export interface PluginNavigationNavigationsItemsRelated
   };
 }
 
+export interface ApiAssistantAssistant extends Schema.CollectionType {
+  collectionName: 'assistants';
+  info: {
+    singularName: 'assistant';
+    pluralName: 'assistants';
+    displayName: 'Assistant';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    employee: Attribute.Relation<
+      'api::assistant.assistant',
+      'oneToOne',
+      'api::employee.employee'
+    >;
+    signature: Attribute.String;
+    date: Attribute.DateTime;
+    isSigned: Attribute.Boolean;
+    form: Attribute.Relation<
+      'api::assistant.assistant',
+      'oneToOne',
+      'api::form.form'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::assistant.assistant',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::assistant.assistant',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCityCity extends Schema.CollectionType {
   collectionName: 'cities';
   info: {
@@ -1191,6 +1233,42 @@ export interface ApiCountryCountry extends Schema.CollectionType {
   };
 }
 
+export interface ApiDataFieldDataField extends Schema.CollectionType {
+  collectionName: 'data_fields';
+  info: {
+    singularName: 'data-field';
+    pluralName: 'data-fields';
+    displayName: 'dataField';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    values: Attribute.JSON;
+    company: Attribute.Relation<
+      'api::data-field.data-field',
+      'oneToOne',
+      'api::company.company'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::data-field.data-field',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::data-field.data-field',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDepartmentDepartment extends Schema.CollectionType {
   collectionName: 'departments';
   info: {
@@ -1251,14 +1329,16 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'api::identification-type.identification-type'
     >;
     identificationNumber: Attribute.String;
-    names: Attribute.String;
-    surnames: Attribute.String;
+    firstName: Attribute.String;
+    secondName: Attribute.String;
+    firstSurname: Attribute.String;
+    secondSurname: Attribute.String;
+    username: Attribute.String;
     birthdate: Attribute.DateTime;
     email: Attribute.Email;
     address: Attribute.String;
     cellphoneNumber: Attribute.String;
     phoneNumber: Attribute.String;
-    password: Attribute.Password;
     position: Attribute.Relation<
       'api::employee.employee',
       'manyToOne',
@@ -1320,6 +1400,8 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     profilePicture: Attribute.Media;
     files: Attribute.Media;
     signature: Attribute.Media;
+    dateAdmission: Attribute.Date;
+    withdrawalDate: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1350,6 +1432,7 @@ export interface ApiFormForm extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
+    code: Attribute.String;
     uid: Attribute.String;
     name: Attribute.String;
     version: Attribute.String;
@@ -1376,6 +1459,7 @@ export interface ApiFormTemplateFormTemplate extends Schema.CollectionType {
     singularName: 'form-template';
     pluralName: 'form-templates';
     displayName: 'FormTemplate';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1389,6 +1473,9 @@ export interface ApiFormTemplateFormTemplate extends Schema.CollectionType {
       'oneToOne',
       'api::company.company'
     >;
+    route: Attribute.String;
+    version: Attribute.String;
+    effectiveDate: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1818,10 +1905,12 @@ declare module '@strapi/types' {
       'plugin::navigation.navigation': PluginNavigationNavigation;
       'plugin::navigation.navigation-item': PluginNavigationNavigationItem;
       'plugin::navigation.navigations-items-related': PluginNavigationNavigationsItemsRelated;
+      'api::assistant.assistant': ApiAssistantAssistant;
       'api::city.city': ApiCityCity;
       'api::company.company': ApiCompanyCompany;
       'api::compensation-fund.compensation-fund': ApiCompensationFundCompensationFund;
       'api::country.country': ApiCountryCountry;
+      'api::data-field.data-field': ApiDataFieldDataField;
       'api::department.department': ApiDepartmentDepartment;
       'api::employee.employee': ApiEmployeeEmployee;
       'api::form.form': ApiFormForm;
