@@ -5,11 +5,23 @@ export interface FormsField extends Schema.Component {
   info: {
     displayName: 'Field';
     icon: 'manyWays';
+    description: '';
   };
   attributes: {
     name: Attribute.String;
-    type: Attribute.String;
     value: Attribute.JSON;
+    type: Attribute.Enumeration<
+      [
+        'string,',
+        'integer,',
+        'date,',
+        'dateTime,',
+        'boolean,',
+        'array,',
+        'object,',
+        'radio'
+      ]
+    >;
   };
 }
 

@@ -2,18 +2,29 @@
   "collectionName": "components_forms_fields",
   "info": {
     "displayName": "Field",
-    "icon": "manyWays"
+    "icon": "manyWays",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "name": {
       "type": "string"
     },
-    "type": {
-      "type": "string"
-    },
     "value": {
       "type": "json"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "string,",
+        "integer,",
+        "date,",
+        "dateTime,",
+        "boolean,",
+        "array,",
+        "object,",
+        "radio"
+      ]
     }
   }
 }

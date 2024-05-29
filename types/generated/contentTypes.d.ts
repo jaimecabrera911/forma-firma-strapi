@@ -1004,6 +1004,7 @@ export interface ApiAssistantAssistant extends Schema.CollectionType {
     singularName: 'assistant';
     pluralName: 'assistants';
     displayName: 'Assistant';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1022,6 +1023,7 @@ export interface ApiAssistantAssistant extends Schema.CollectionType {
       'oneToOne',
       'api::form.form'
     >;
+    dateSignature: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
