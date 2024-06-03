@@ -16,14 +16,15 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "string,",
-        "integer,",
-        "date,",
-        "dateTime,",
-        "boolean,",
-        "array,",
-        "object,",
-        "radio"
+        "string",
+        "integer",
+        "date",
+        "dateTime",
+        "boolean",
+        "array",
+        "object",
+        "radio",
+        "textArea"
       ]
     }
   }

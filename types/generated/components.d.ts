@@ -12,14 +12,15 @@ export interface FormsField extends Schema.Component {
     value: Attribute.JSON;
     type: Attribute.Enumeration<
       [
-        'string,',
-        'integer,',
-        'date,',
-        'dateTime,',
-        'boolean,',
-        'array,',
-        'object,',
-        'radio'
+        'string',
+        'integer',
+        'date',
+        'dateTime',
+        'boolean',
+        'array',
+        'object',
+        'radio',
+        'textArea'
       ]
     >;
   };

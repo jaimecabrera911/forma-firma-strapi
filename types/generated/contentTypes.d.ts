@@ -1018,12 +1018,12 @@ export interface ApiAssistantAssistant extends Schema.CollectionType {
     signature: Attribute.String;
     date: Attribute.DateTime;
     isSigned: Attribute.Boolean;
+    dateSignature: Attribute.DateTime;
     form: Attribute.Relation<
       'api::assistant.assistant',
-      'oneToOne',
+      'manyToOne',
       'api::form.form'
     >;
-    dateSignature: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1444,6 +1444,11 @@ export interface ApiFormForm extends Schema.CollectionType {
       'api::form.form',
       'oneToOne',
       'api::project.project'
+    >;
+    assistants: Attribute.Relation<
+      'api::form.form',
+      'oneToMany',
+      'api::assistant.assistant'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

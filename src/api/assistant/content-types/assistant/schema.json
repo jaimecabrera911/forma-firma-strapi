@@ -26,13 +26,14 @@
     "isSigned": {
       "type": "boolean"
     },
-    "form": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::form.form"
-    },
     "dateSignature": {
       "type": "datetime"
+    },
+    "form": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::form.form",
+      "inversedBy": "assistants"
     }
   }
 }
