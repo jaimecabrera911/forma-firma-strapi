@@ -1140,6 +1140,11 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
       'oneToMany',
       'api::workspace.workspace'
     >;
+    forms: Attribute.Relation<
+      'api::company.company',
+      'oneToMany',
+      'api::form.form'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1449,6 +1454,11 @@ export interface ApiFormForm extends Schema.CollectionType {
       'api::form.form',
       'oneToMany',
       'api::assistant.assistant'
+    >;
+    company: Attribute.Relation<
+      'api::form.form',
+      'manyToOne',
+      'api::company.company'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

@@ -79,6 +79,12 @@
       "relation": "oneToMany",
       "target": "api::workspace.workspace",
       "mappedBy": "company"
+    },
+    "forms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::form.form",
+      "mappedBy": "company"
     }
   }
 }

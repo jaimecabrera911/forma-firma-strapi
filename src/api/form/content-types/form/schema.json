@@ -50,6 +50,12 @@
       "relation": "oneToMany",
       "target": "api::assistant.assistant",
       "mappedBy": "form"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "forms"
     }
   }
 }
