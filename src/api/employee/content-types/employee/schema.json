@@ -1,162 +1,171 @@
 {
-    "kind": "collectionType",
-    "collectionName": "employees",
-    "info": {
-        "singularName": "employee",
-        "pluralName": "employees",
-        "displayName": "Employee",
-        "description": ""
+  "kind": "collectionType",
+  "collectionName": "employees",
+  "info": {
+    "singularName": "employee",
+    "pluralName": "employees",
+    "displayName": "Employee",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "identificationType": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::identification-type.identification-type",
+      "inversedBy": "employees"
     },
-    "options": {
-        "draftAndPublish": true
+    "identificationNumber": {
+      "type": "string"
     },
-    "pluginOptions": {},
-    "attributes": {
-        "identificationType": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::identification-type.identification-type",
-            "inversedBy": "employees"
-        },
-        "identificationNumber": {
-            "type": "string"
-        },
-        "firstName": {
-            "type": "string"
-        },
-        "secondName": {
-            "type": "string"
-        },
-        "firstSurname": {
-            "type": "string"
-        },
-        "secondSurname": {
-            "type": "string"
-        },
-        "username": {
-            "type": "string"
-        },
-        "birthdate": {
-            "type": "datetime"
-        },
-        "email": {
-            "type": "email"
-        },
-        "address": {
-            "type": "string"
-        },
-        "cellphoneNumber": {
-            "type": "string"
-        },
-        "phoneNumber": {
-            "type": "string"
-        },
-        "position": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::position.position",
-            "inversedBy": "employees"
-        },
-        "contactName": {
-            "type": "string"
-        },
-        "contactNumber": {
-            "type": "string"
-        },
-        "enabled": {
-            "type": "boolean"
-        },
-        "user": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "plugin::users-permissions.user"
-        },
-        "company": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::company.company",
-            "inversedBy": "employees"
-        },
-        "healthcareProvider": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::healthcare-provider.healthcare-provider",
-            "inversedBy": "employees"
-        },
-        "pension": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::pension.pension",
-            "inversedBy": "employees"
-        },
-        "occupationRiskManager": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::occupation-risk-manager.occupation-risk-manager",
-            "inversedBy": "employees"
-        },
-        "compensationFund": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::compensation-fund.compensation-fund",
-            "inversedBy": "employees"
-        },
-        "workspace": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::workspace.workspace",
-            "inversedBy": "employees"
-        },
-        "gender": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::gender.gender",
-            "inversedBy": "employees"
-        },
-        "city": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::city.city",
-            "inversedBy": "employees"
-        },
-        "birthCountry": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::country.country",
-            "inversedBy": "employees"
-        },
-        "profilePicture": {
-            "type": "media",
-            "multiple": false,
-            "required": false,
-            "allowedTypes": [
-                "images"
-            ]
-        },
-        "files": {
-            "type": "media",
-            "multiple": true,
-            "required": false,
-            "allowedTypes": [
-                "images",
-                "files",
-                "videos",
-                "audios"
-            ]
-        },
-        "signature": {
-            "type": "media",
-            "multiple": false,
-            "required": false,
-            "allowedTypes": [
-                "images"
-            ]
-        },
-        "dateAdmission": {
-            "type": "date"
-        },
-        "withdrawalDate": {
-            "type": "date"
-        }
+    "firstName": {
+      "type": "string"
+    },
+    "secondName": {
+      "type": "string"
+    },
+    "firstSurname": {
+      "type": "string"
+    },
+    "secondSurname": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "birthdate": {
+      "type": "datetime"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "string"
+    },
+    "cellphoneNumber": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "position": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::position.position",
+      "inversedBy": "employees"
+    },
+    "contactName": {
+      "type": "string"
+    },
+    "contactNumber": {
+      "type": "string"
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "employees"
+    },
+    "healthcareProvider": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::healthcare-provider.healthcare-provider",
+      "inversedBy": "employees"
+    },
+    "pension": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pension.pension",
+      "inversedBy": "employees"
+    },
+    "occupationRiskManager": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::occupation-risk-manager.occupation-risk-manager",
+      "inversedBy": "employees"
+    },
+    "compensationFund": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::compensation-fund.compensation-fund",
+      "inversedBy": "employees"
+    },
+    "workspace": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::workspace.workspace",
+      "inversedBy": "employees"
+    },
+    "gender": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::gender.gender",
+      "inversedBy": "employees"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "employees"
+    },
+    "birthCountry": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::country.country",
+      "inversedBy": "employees"
+    },
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "files": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "signature": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "dateAdmission": {
+      "type": "date"
+    },
+    "withdrawalDate": {
+      "type": "date"
+    },
+    "isManager": {
+      "type": "boolean"
+    },
+    "approvals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::approval.approval",
+      "mappedBy": "employee"
     }
+  }
 }

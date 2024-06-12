@@ -56,6 +56,12 @@
       "relation": "manyToOne",
       "target": "api::company.company",
       "inversedBy": "forms"
+    },
+    "approvals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::approval.approval",
+      "mappedBy": "form"
     }
   }
 }

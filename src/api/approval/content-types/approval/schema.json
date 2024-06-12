@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "approvals",
+  "info": {
+    "singularName": "approval",
+    "pluralName": "approvals",
+    "displayName": "approval",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "employee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employee.employee",
+      "inversedBy": "approvals"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "aprobado",
+        "pendiente",
+        "rechazado"
+      ]
+    },
+    "reason": {
+      "type": "enumeration",
+      "enum": [
+        "aprobacion",
+        "capacitacion",
+        "supervision"
+      ]
+    },
+    "observations": {
+      "type": "richtext"
+    },
+    "form": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::form.form",
+      "inversedBy": "approvals"
+    }
+  }
+}

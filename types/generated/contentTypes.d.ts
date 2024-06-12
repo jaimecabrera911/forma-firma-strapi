@@ -998,6 +998,51 @@ export interface PluginNavigationNavigationsItemsRelated
   };
 }
 
+export interface ApiApprovalApproval extends Schema.CollectionType {
+  collectionName: 'approvals';
+  info: {
+    singularName: 'approval';
+    pluralName: 'approvals';
+    displayName: 'approval';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    employee: Attribute.Relation<
+      'api::approval.approval',
+      'manyToOne',
+      'api::employee.employee'
+    >;
+    state: Attribute.Enumeration<['aprobado', 'pendiente', 'rechazado']>;
+    reason: Attribute.Enumeration<
+      ['aprobacion', 'capacitacion', 'supervision']
+    >;
+    observations: Attribute.RichText;
+    form: Attribute.Relation<
+      'api::approval.approval',
+      'manyToOne',
+      'api::form.form'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::approval.approval',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::approval.approval',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAssistantAssistant extends Schema.CollectionType {
   collectionName: 'assistants';
   info: {
@@ -1409,6 +1454,12 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     signature: Attribute.Media;
     dateAdmission: Attribute.Date;
     withdrawalDate: Attribute.Date;
+    isManager: Attribute.Boolean;
+    approvals: Attribute.Relation<
+      'api::employee.employee',
+      'oneToMany',
+      'api::approval.approval'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1459,6 +1510,11 @@ export interface ApiFormForm extends Schema.CollectionType {
       'api::form.form',
       'manyToOne',
       'api::company.company'
+    >;
+    approvals: Attribute.Relation<
+      'api::form.form',
+      'oneToMany',
+      'api::approval.approval'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1922,6 +1978,7 @@ declare module '@strapi/types' {
       'plugin::navigation.navigation': PluginNavigationNavigation;
       'plugin::navigation.navigation-item': PluginNavigationNavigationItem;
       'plugin::navigation.navigations-items-related': PluginNavigationNavigationsItemsRelated;
+      'api::approval.approval': ApiApprovalApproval;
       'api::assistant.assistant': ApiAssistantAssistant;
       'api::city.city': ApiCityCity;
       'api::company.company': ApiCompanyCompany;
