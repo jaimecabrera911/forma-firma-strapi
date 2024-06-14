@@ -1060,7 +1060,6 @@ export interface ApiAssistantAssistant extends Schema.CollectionType {
       'oneToOne',
       'api::employee.employee'
     >;
-    signature: Attribute.String;
     date: Attribute.DateTime;
     isSigned: Attribute.Boolean;
     dateSignature: Attribute.DateTime;
@@ -1069,6 +1068,7 @@ export interface ApiAssistantAssistant extends Schema.CollectionType {
       'manyToOne',
       'api::form.form'
     >;
+    signature: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

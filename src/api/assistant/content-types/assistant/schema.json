@@ -17,9 +17,6 @@
       "relation": "oneToOne",
       "target": "api::employee.employee"
     },
-    "signature": {
-      "type": "string"
-    },
     "date": {
       "type": "datetime"
     },
@@ -34,6 +31,16 @@
       "relation": "manyToOne",
       "target": "api::form.form",
       "inversedBy": "assistants"
+    },
+    "signature": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
