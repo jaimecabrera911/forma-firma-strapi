@@ -1462,6 +1462,7 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     >;
     roles: Attribute.JSON;
     permissions: Attribute.JSON;
+    fullName: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

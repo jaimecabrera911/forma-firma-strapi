@@ -172,6 +172,9 @@
     },
     "permissions": {
       "type": "json"
+    },
+    "fullName": {
+      "type": "text"
     }
   }
 }
