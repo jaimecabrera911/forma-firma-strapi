@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-14T03:21:44.411Z"
+    "x-generation-date": "2024-07-14T03:23:08.994Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3669,6 +3669,8 @@
                           }
                         }
                       },
+                      "roles": {},
+                      "permissions": {},
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -7413,6 +7415,8 @@
                           }
                         }
                       },
+                      "roles": {},
+                      "permissions": {},
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -10957,6 +10961,8 @@
                                                       }
                                                     }
                                                   },
+                                                  "roles": {},
+                                                  "permissions": {},
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -15091,6 +15097,8 @@
                                         }
                                       }
                                     },
+                                    "roles": {},
+                                    "permissions": {},
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -19006,6 +19014,8 @@
                             }
                           }
                         },
+                        "roles": {},
+                        "permissions": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -22713,6 +22723,8 @@
                             }
                           }
                         },
+                        "roles": {},
+                        "permissions": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -26063,6 +26075,8 @@
                                                     }
                                                   }
                                                 },
+                                                "roles": {},
+                                                "permissions": {},
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -29656,6 +29670,8 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "roles": {},
+                                                                "permissions": {},
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -30505,7 +30521,9 @@
                   ],
                   "example": "string or id"
                 }
-              }
+              },
+              "roles": {},
+              "permissions": {}
             }
           }
         }
@@ -33966,6 +33984,8 @@
                                         }
                                       }
                                     },
+                                    "roles": {},
+                                    "permissions": {},
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -34773,6 +34793,8 @@
               }
             }
           },
+          "roles": {},
+          "permissions": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -38002,6 +38024,8 @@
                                                                               }
                                                                             }
                                                                           },
+                                                                          "roles": {},
+                                                                          "permissions": {},
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -42203,6 +42227,8 @@
                                                     }
                                                   }
                                                 },
+                                                "roles": {},
+                                                "permissions": {},
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -46259,6 +46285,8 @@
                             }
                           }
                         },
+                        "roles": {},
+                        "permissions": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -49946,6 +49974,8 @@
                             }
                           }
                         },
+                        "roles": {},
+                        "permissions": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -53661,6 +53691,8 @@
                             }
                           }
                         },
+                        "roles": {},
+                        "permissions": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -57368,6 +57400,8 @@
                             }
                           }
                         },
+                        "roles": {},
+                        "permissions": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -61055,6 +61089,8 @@
                             }
                           }
                         },
+                        "roles": {},
+                        "permissions": {},
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -64397,6 +64433,8 @@
                                                     }
                                                   }
                                                 },
+                                                "roles": {},
+                                                "permissions": {},
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -68047,6 +68085,8 @@
                                                                   }
                                                                 }
                                                               },
+                                                              "roles": {},
+                                                              "permissions": {},
                                                               "createdAt": {
                                                                 "type": "string",
                                                                 "format": "date-time"
@@ -71908,6 +71948,8 @@
                                                       }
                                                     }
                                                   },
+                                                  "roles": {},
+                                                  "permissions": {},
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -76000,6 +76042,8 @@
                                                     }
                                                   }
                                                 },
+                                                "roles": {},
+                                                "permissions": {},
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"

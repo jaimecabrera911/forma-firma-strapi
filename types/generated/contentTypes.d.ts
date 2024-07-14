@@ -1460,6 +1460,8 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'oneToMany',
       'api::approval.approval'
     >;
+    roles: Attribute.JSON;
+    permissions: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

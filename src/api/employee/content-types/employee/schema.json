@@ -166,6 +166,12 @@
       "relation": "oneToMany",
       "target": "api::approval.approval",
       "mappedBy": "employee"
+    },
+    "roles": {
+      "type": "json"
+    },
+    "permissions": {
+      "type": "json"
     }
   }
 }
