@@ -1010,11 +1010,6 @@ export interface ApiApprovalApproval extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    employee: Attribute.Relation<
-      'api::approval.approval',
-      'manyToOne',
-      'api::employee.employee'
-    >;
     state: Attribute.Enumeration<['aprobado', 'pendiente', 'rechazado']>;
     reason: Attribute.Enumeration<
       ['aprobacion', 'capacitacion', 'supervision']
@@ -1455,11 +1450,6 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     dateAdmission: Attribute.Date;
     withdrawalDate: Attribute.Date;
     isManager: Attribute.Boolean;
-    approvals: Attribute.Relation<
-      'api::employee.employee',
-      'oneToMany',
-      'api::approval.approval'
-    >;
     roles: Attribute.JSON;
     permissions: Attribute.JSON;
     fullName: Attribute.Text;

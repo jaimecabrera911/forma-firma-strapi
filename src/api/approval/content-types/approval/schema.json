@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "employee": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::employee.employee",
-      "inversedBy": "approvals"
-    },
     "state": {
       "type": "enumeration",
       "enum": [

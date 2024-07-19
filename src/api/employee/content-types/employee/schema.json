@@ -161,12 +161,6 @@
     "isManager": {
       "type": "boolean"
     },
-    "approvals": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::approval.approval",
-      "mappedBy": "employee"
-    },
     "roles": {
       "type": "json"
     },
