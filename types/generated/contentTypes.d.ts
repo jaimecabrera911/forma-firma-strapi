@@ -1453,6 +1453,11 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
     roles: Attribute.JSON;
     permissions: Attribute.JSON;
     fullName: Attribute.Text;
+    projects: Attribute.Relation<
+      'api::employee.employee',
+      'oneToMany',
+      'api::project.project'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1815,10 +1820,10 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'manyToOne',
       'api::company.company'
     >;
-    user: Attribute.Relation<
+    employee: Attribute.Relation<
       'api::project.project',
-      'oneToOne',
-      'plugin::users-permissions.user'
+      'manyToOne',
+      'api::employee.employee'
     >;
     state: Attribute.Relation<
       'api::project.project',

@@ -43,10 +43,11 @@
       "target": "api::company.company",
       "inversedBy": "projects"
     },
-    "user": {
+    "employee": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "relation": "manyToOne",
+      "target": "api::employee.employee",
+      "inversedBy": "projects"
     },
     "state": {
       "type": "relation",

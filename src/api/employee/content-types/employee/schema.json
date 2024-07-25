@@ -169,6 +169,12 @@
     },
     "fullName": {
       "type": "text"
+    },
+    "projects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::project.project",
+      "mappedBy": "employee"
     }
   }
 }
