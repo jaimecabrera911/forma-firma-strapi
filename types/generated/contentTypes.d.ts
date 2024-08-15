@@ -1012,13 +1012,24 @@ export interface ApiApprovalApproval extends Schema.CollectionType {
   attributes: {
     state: Attribute.Enumeration<['aprobado', 'pendiente', 'rechazado']>;
     reason: Attribute.Enumeration<
-      ['aprobacion', 'capacitacion', 'supervision']
+      [
+        'aprobacion',
+        'capacitacion',
+        'supervision',
+        'inspeccion',
+        'revisarInspeccion'
+      ]
     >;
     observations: Attribute.RichText;
     form: Attribute.Relation<
       'api::approval.approval',
       'manyToOne',
       'api::form.form'
+    >;
+    employee: Attribute.Relation<
+      'api::approval.approval',
+      'manyToOne',
+      'api::employee.employee'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1457,6 +1468,11 @@ export interface ApiEmployeeEmployee extends Schema.CollectionType {
       'api::employee.employee',
       'oneToMany',
       'api::project.project'
+    >;
+    approvals: Attribute.Relation<
+      'api::employee.employee',
+      'oneToMany',
+      'api::approval.approval'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

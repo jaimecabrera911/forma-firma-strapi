@@ -175,6 +175,12 @@
       "relation": "oneToMany",
       "target": "api::project.project",
       "mappedBy": "employee"
+    },
+    "approvals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::approval.approval",
+      "mappedBy": "employee"
     }
   }
 }

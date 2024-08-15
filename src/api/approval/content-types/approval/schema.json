@@ -25,7 +25,9 @@
       "enum": [
         "aprobacion",
         "capacitacion",
-        "supervision"
+        "supervision",
+        "inspeccion",
+        "revisarInspeccion"
       ]
     },
     "observations": {
@@ -35,6 +37,12 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::form.form",
+      "inversedBy": "approvals"
+    },
+    "employee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employee.employee",
       "inversedBy": "approvals"
     }
   }
