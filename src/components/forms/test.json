@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_forms_tests",
+  "info": {
+    "displayName": "test",
+    "icon": "alien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "fields": {
+      "type": "json"
+    },
+    "position": {
+      "type": "integer"
+    }
+  }
+}

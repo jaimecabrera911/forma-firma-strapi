@@ -26,10 +26,24 @@ export interface FormsField extends Schema.Component {
   };
 }
 
+export interface FormsTest extends Schema.Component {
+  collectionName: 'components_forms_tests';
+  info: {
+    displayName: 'test';
+    icon: 'alien';
+    description: '';
+  };
+  attributes: {
+    fields: Attribute.JSON;
+    position: Attribute.Integer;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'forms.field': FormsField;
+      'forms.test': FormsTest;
     }
   }
 }

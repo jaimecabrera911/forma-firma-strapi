@@ -1530,6 +1530,7 @@ export interface ApiFormForm extends Schema.CollectionType {
       'oneToMany',
       'api::approval.approval'
     >;
+    dataFields: Attribute.Component<'forms.test', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

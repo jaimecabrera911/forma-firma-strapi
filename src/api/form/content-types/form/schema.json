@@ -62,6 +62,12 @@
       "relation": "oneToMany",
       "target": "api::approval.approval",
       "mappedBy": "form"
+    },
+    "dataFields": {
+      "displayName": "test",
+      "type": "component",
+      "repeatable": true,
+      "component": "forms.test"
     }
   }
 }

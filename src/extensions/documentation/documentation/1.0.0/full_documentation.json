@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-08-15T02:34:00.008Z"
+    "x-generation-date": "2024-09-04T16:25:46.040Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3719,6 +3719,21 @@
                           }
                         }
                       },
+                      "dataFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "number"
+                            },
+                            "fields": {},
+                            "position": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      },
                       "createdAt": {
                         "type": "string",
                         "format": "date-time"
@@ -6012,6 +6027,21 @@
                                                                           }
                                                                         }
                                                                       }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "dataFields": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "number"
+                                                                    },
+                                                                    "fields": {},
+                                                                    "position": {
+                                                                      "type": "integer"
                                                                     }
                                                                   }
                                                                 }
@@ -10920,6 +10950,21 @@
                                                                                 }
                                                                               }
                                                                             },
+                                                                            "dataFields": {
+                                                                              "type": "array",
+                                                                              "items": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "id": {
+                                                                                    "type": "number"
+                                                                                  },
+                                                                                  "fields": {},
+                                                                                  "position": {
+                                                                                    "type": "integer"
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -13777,6 +13822,21 @@
                                                                                       }
                                                                                     }
                                                                                   }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "dataFields": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "id": {
+                                                                                  "type": "number"
+                                                                                },
+                                                                                "fields": {},
+                                                                                "position": {
+                                                                                  "type": "integer"
                                                                                 }
                                                                               }
                                                                             }
@@ -17690,6 +17750,21 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "dataFields": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "fields": {},
+                                                                      "position": {
+                                                                        "type": "integer"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -21420,6 +21495,21 @@
                                                                             }
                                                                           }
                                                                         }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "dataFields": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "fields": {},
+                                                                      "position": {
+                                                                        "type": "integer"
                                                                       }
                                                                     }
                                                                   }
@@ -26134,6 +26224,21 @@
                                                                               }
                                                                             }
                                                                           },
+                                                                          "dataFields": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "id": {
+                                                                                  "type": "number"
+                                                                                },
+                                                                                "fields": {},
+                                                                                "position": {
+                                                                                  "type": "integer"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -29754,6 +29859,21 @@
                                                                                               }
                                                                                             }
                                                                                           },
+                                                                                          "dataFields": {
+                                                                                            "type": "array",
+                                                                                            "items": {
+                                                                                              "type": "object",
+                                                                                              "properties": {
+                                                                                                "id": {
+                                                                                                  "type": "number"
+                                                                                                },
+                                                                                                "fields": {},
+                                                                                                "position": {
+                                                                                                  "type": "integer"
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          },
                                                                                           "createdAt": {
                                                                                             "type": "string",
                                                                                             "format": "date-time"
@@ -32810,6 +32930,21 @@
                                                                               }
                                                                             }
                                                                           },
+                                                                          "dataFields": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "id": {
+                                                                                  "type": "number"
+                                                                                },
+                                                                                "fields": {},
+                                                                                "position": {
+                                                                                  "type": "integer"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -35223,6 +35358,12 @@
                     }
                   ],
                   "example": "string or id"
+                }
+              },
+              "dataFields": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/FormsTestComponent"
                 }
               }
             }
@@ -38198,6 +38339,21 @@
                                                                                                         }
                                                                                                       }
                                                                                                     },
+                                                                                                    "dataFields": {
+                                                                                                      "type": "array",
+                                                                                                      "items": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                          "id": {
+                                                                                                            "type": "number"
+                                                                                                          },
+                                                                                                          "fields": {},
+                                                                                                          "position": {
+                                                                                                            "type": "integer"
+                                                                                                          }
+                                                                                                        }
+                                                                                                      }
+                                                                                                    },
                                                                                                     "createdAt": {
                                                                                                       "type": "string",
                                                                                                       "format": "date-time"
@@ -39054,6 +39210,12 @@
               }
             }
           },
+          "dataFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FormsTestComponent"
+            }
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -39147,6 +39309,18 @@
               "radio",
               "textArea"
             ]
+          }
+        }
+      },
+      "FormsTestComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "fields": {},
+          "position": {
+            "type": "integer"
           }
         }
       },
@@ -42426,6 +42600,21 @@
                                                                               }
                                                                             }
                                                                           },
+                                                                          "dataFields": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "id": {
+                                                                                  "type": "number"
+                                                                                },
+                                                                                "fields": {},
+                                                                                "position": {
+                                                                                  "type": "integer"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -45172,6 +45361,21 @@
                                                                             }
                                                                           }
                                                                         }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "dataFields": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "fields": {},
+                                                                      "position": {
+                                                                        "type": "integer"
                                                                       }
                                                                     }
                                                                   }
@@ -48886,6 +49090,21 @@
                                                                             }
                                                                           }
                                                                         }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "dataFields": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "fields": {},
+                                                                      "position": {
+                                                                        "type": "integer"
                                                                       }
                                                                     }
                                                                   }
@@ -52632,6 +52851,21 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "dataFields": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "fields": {},
+                                                                      "position": {
+                                                                        "type": "integer"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -56366,6 +56600,21 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "dataFields": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "fields": {},
+                                                                      "position": {
+                                                                        "type": "integer"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -60076,6 +60325,21 @@
                                                                             }
                                                                           }
                                                                         }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "dataFields": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "number"
+                                                                      },
+                                                                      "fields": {},
+                                                                      "position": {
+                                                                        "type": "integer"
                                                                       }
                                                                     }
                                                                   }
@@ -64782,6 +65046,21 @@
                                                                               }
                                                                             }
                                                                           },
+                                                                          "dataFields": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "id": {
+                                                                                  "type": "number"
+                                                                                },
+                                                                                "fields": {},
+                                                                                "position": {
+                                                                                  "type": "integer"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -68455,6 +68734,21 @@
                                                                                                     "properties": {}
                                                                                                   }
                                                                                                 }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "dataFields": {
+                                                                                          "type": "array",
+                                                                                          "items": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                              "id": {
+                                                                                                "type": "number"
+                                                                                              },
+                                                                                              "fields": {},
+                                                                                              "position": {
+                                                                                                "type": "integer"
                                                                                               }
                                                                                             }
                                                                                           }
@@ -72343,6 +72637,21 @@
                                                                                         "properties": {}
                                                                                       }
                                                                                     }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "dataFields": {
+                                                                              "type": "array",
+                                                                              "items": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "id": {
+                                                                                    "type": "number"
+                                                                                  },
+                                                                                  "fields": {},
+                                                                                  "position": {
+                                                                                    "type": "integer"
                                                                                   }
                                                                                 }
                                                                               }
@@ -76462,6 +76771,21 @@
                                                                                       "properties": {}
                                                                                     }
                                                                                   }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "dataFields": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "id": {
+                                                                                  "type": "number"
+                                                                                },
+                                                                                "fields": {},
+                                                                                "position": {
+                                                                                  "type": "integer"
                                                                                 }
                                                                               }
                                                                             }
